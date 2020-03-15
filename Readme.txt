@@ -1,3 +1,3 @@
 Clase:
 
-39. 2.04 - Componentes presentacionales
+40. 2.05 - ngContainer
