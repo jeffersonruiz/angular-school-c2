@@ -1,4 +1,4 @@
 <h1>Contacts</h1>
-<p *ngFor="let constact of contacts">
-  {{constact.name}}
-</p>
+<div class="contact-list">
+    <app-contact *ngFor="let contact of contacts" [contact]="contact"></app-contact>
+</div>
