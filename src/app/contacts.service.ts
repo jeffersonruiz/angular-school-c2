@@ -9,7 +9,10 @@ export class ContactsService {
 
     getContacts() {
         return [
-            new Contact(1, 'Jefferson', 'assets/default-user.png'),
+            new Contact(1, 'Jefferson', 'assets/default-user.png', [
+                {type: PhoneTypes.Mobile, number: 2345},
+                {type: PhoneTypes.Work, number: 5698767}
+            ], 'prueba@hotmail.com'),
             new Contact(2, 'Nathalia', 'assets/default-user.png', [{type: PhoneTypes.Mobile, number: 1234}]),
             new Contact(3, 'Nicol', 'assets/default-user.png', [
                 {type: PhoneTypes.Mobile, number: 1234},
@@ -17,7 +20,8 @@ export class ContactsService {
             ], 'prueba@hotmail.com'),
             new Contact(4, 'Martha', 'assets/default-user.png', [
                 {type: PhoneTypes.Mobile, number: 789},
-                {type: PhoneTypes.Home, number: 1011}
+                {type: PhoneTypes.Home, number: 1011},
+                {type: PhoneTypes.Work, number: 1015}
             ], 'prueba@hotmail.com', 'Calle 123')
         ];
     }

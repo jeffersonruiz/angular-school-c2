@@ -1,4 +1,4 @@
-<div class="contact">
+<div class="contact" (click)="onClick()">
     <img class="contact-image" [src]="contact.picture">
     <div class="contact-detail">
         <h1 class="contact-detail-name">{{contact.name}}</h1>
@@ -6,5 +6,13 @@
             <span class="contact-detail-phone-type">({{contact.phones[0].type}}) - </span>
             <span class="contact-detail-phone-number">({{contact.phones[0].number}})</span>
         </p>
+        <ng-container *ngIf="expanded">
+            <p class="contact-detail-phone" *ngFor="let phone of contact.phones | slice:1">
+                <span class="contact-detail-phone-type">({{phone.type}}) - </span>
+                <span class="contact-detail-phone-number">({{phone.number}})</span>
+            </p>
+            <p class="contact-detail-email">{{contact.email}}</p>
+            <p class="contact-detail-addres">{{contact.direction}}</p>
+        </ng-container>
     </div>
 </div>
