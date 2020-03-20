@@ -1,8 +1,8 @@
-<h1>Contacts</h1>
+<h1 [class.sticky-header]="isStickyHeader" >Contacts</h1>
 
 <div class="container">
 
-    <div class="contacts-list">
+    <div class="contacts-list" [style.margin-top.px]="isStickyHeader ? 80 : 0">
         <app-contact *ngFor="let contact of contacts"
         [contact]="contact" (clicked)="onContactSelected($event)"></app-contact>
     </div>

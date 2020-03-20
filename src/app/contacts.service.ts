@@ -45,6 +45,9 @@ export class ContactsService {
             new Contact(6, 'Kaycee', 'assets/default-user.png', [
                 {type: PhoneType.mobile, number: 939876655 },
             ], 'kaycee@email.com', 'Arago 356, 08032, Barcelona' ),
+            new Contact(7, 'Jefferson', 'assets/default-user.png', [
+                {type: PhoneType.mobile, number: 939876655 },
+            ], 'Jefferson@email.com', 'Arago 356, 08032, Barcelona' ),
         ];
     }
 
