@@ -1,6 +1,10 @@
-<h1 [class.sticky-header]="isStickyHeader">Contacts</h1>
+<app-sticky-bar #stickyBar >
+    <h1>Contact</h1>
+    <button>add</button>
+    <button>Search</button>
+</app-sticky-bar>
 
-<div class="container" [style.margin-top.px]="isStickyHeader ? 80 : 0">
+<div class="container" [style.margin-top.px]="stickyBar.isSticky ? 80 : 0">
 
     <div class="contacts-list">
         <app-contact [appHighlight]="contactsService.selectedContact?.id == contact.id" *ngFor="let contact of contacts"

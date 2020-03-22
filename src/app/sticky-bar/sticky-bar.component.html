@@ -1,1 +1,7 @@
-<p>sticky-bar</p>
+<div class="container" [class.sticky-header]="isSticky">
+    <ng-content></ng-content>
+
+    <div class="buttons">
+        <ng-content select="button"></ng-content>
+    </div>
+</div>
