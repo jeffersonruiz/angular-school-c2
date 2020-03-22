@@ -134,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "angular-school-c2"
+  "defaultProject": "angular-school-c2",
+  "cli": {
+    "analytics": "9f9ba00e-1321-4de0-95d0-fe87ef1e5bdc"
+  }
 }
