@@ -1,16 +1,22 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ContentChild, AfterContentInit } from '@angular/core';
+import { BarButtonComponent } from '../bar-button/bar-button.component';
 
 @Component({
   selector: 'app-sticky-bar',
   templateUrl: './sticky-bar.component.html',
   styleUrls: ['./sticky-bar.component.scss']
 })
-export class StickyBarComponent implements OnInit {
-
+export class StickyBarComponent implements OnInit, AfterContentInit {
+  
+  @ContentChild(BarButtonComponent) barButton:BarButtonComponent;
   public isSticky = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngAfterContentInit() {
+    console.log(this.barButton);
   }
 
   @HostListener('window:scroll', ['$event'])
