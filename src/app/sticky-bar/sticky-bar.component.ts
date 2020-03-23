@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ContentChild } from '@angular/core';
+import { Component, OnInit, HostListener, ContentChild, ContentChildren, QueryList } from '@angular/core';
 import { BarButtonComponent } from '../bar-button/bar-button.component';
 
 @Component({
@@ -9,14 +9,18 @@ import { BarButtonComponent } from '../bar-button/bar-button.component';
 export class StickyBarComponent implements OnInit {
 
   @ContentChild('barHeader') barHeader;
+  @ContentChildren(BarButtonComponent) barButtons: QueryList<BarButtonComponent>;
   public isSticky = false;
   constructor() { }
 
   ngOnInit() {
   }
 
-  ngAfterContentInit(){
+  ngAfterContentInit() {
     console.log(this.barHeader);
+    this.barButtons.forEach( item => {
+      item.button.nativeElement.disabled = true;
+    });
   }
 
   @HostListener('window:scroll', ['$event'])
